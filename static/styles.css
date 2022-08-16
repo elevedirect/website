@@ -37,3 +37,9 @@ a:hover {
     background-color: var(--secondary) !important;
     color: var(--text) !important;
 }
+
+@media (max-width: 1024px) {
+    .no-mg-mobile {
+        margin: 0 !important;
+    }
+}

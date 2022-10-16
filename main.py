@@ -16,4 +16,4 @@ def reload_gif():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5050, host='0.0.0.0')
+    app.run(debug=True, port=5050, host='0.0.0.0', ssl_context=('certs/elevedirect_cert.pem', 'certs/elevedirect_key.pem'))

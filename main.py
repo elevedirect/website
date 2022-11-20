@@ -1,11 +1,13 @@
 import requests
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, send_file, request, redirect
 
 app = Flask('EleveDirect Website')
 
 
 @app.route('/')
 def index():
+    if request.url == 'http://app.elevedirect.tk/':
+        return redirect('http://app-eleve-direct.server.camarm.fr/'), 302
     news_title, news_content = requests.get('https://raw.githubusercontent.com/elevedirect/app/master/CHANGELOG.md').content.decode().split('---')
     return render_template('index.html', title=news_title, content=news_content)
 

@@ -6,10 +6,6 @@ app = Flask('EleveDirect Website')
 
 @app.route('/')
 def index():
-    print(request.url)
-    print(request.url_root)
-    if request.url == 'http://app.elevedirect.tk/':
-        return redirect('http://app-eleve-direct.server.camarm.fr/'), 302
     news_title, news_content = requests.get('https://raw.githubusercontent.com/elevedirect/app/master/CHANGELOG.md').content.decode().split('---')
     return render_template('index.html', title=news_title, content=news_content)
 
